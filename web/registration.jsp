@@ -1,16 +1,12 @@
 <%-- 
-    Document   : index
-    Created on : Nov 18, 2014, 2:21:58 PM
+    Document   : registration
+    Created on : Nov 18, 2014, 5:45:00 PM
     Author     : Sabina
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%  for (Cookie cookie
-            : ((HttpServletRequest) pageContext.getRequest()).getCookies()) {
-        if (cookie.getName().equals("username")) {
-            response.sendRedirect("landing.jsp");}
-    }%>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,9 +14,9 @@
         <title>Whirlwind</title>
     </head>
     <body>
-        <div class="container">
-            <h3>Sabina's whirlwind project</h3>
-            <form action="check.jsp" method="post">
+        <div class="container">           
+            <h3>Register</h3>
+            <form action="register.jsp" method="post">
                 <table>
                     <tr>
                         <td>Email:</td>
@@ -30,10 +26,13 @@
                         <td>Password:</td>
                         <td> <input type="password" name="password" value="" /></td>
                     </tr>
+                    <tr>
+                        <td>Username:</td>
+                        <td> <input type="text" name="username" value="" /></td>
+                    </tr>
                 </table>
                 <input type="submit" value="log in" />     
             </form>
-            <p><a href="registration.jsp" >Request access here.</a></p>
         </div>
     </body>
 </html>
